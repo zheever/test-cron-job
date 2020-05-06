@@ -2,4 +2,4 @@ job:on-schedule:
   only:
     - schedules
   script:
-    - yarn && node src/index.js
+    - npm install && npm start
