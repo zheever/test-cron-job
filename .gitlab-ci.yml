@@ -2,4 +2,4 @@ job:on-schedule:
   only:
     - schedules
   script:
-    - node src/index.js
+    - yarn && node src/index.js
