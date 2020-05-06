@@ -1,0 +1,11 @@
+{
+  "name": "scheduler-test",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://gitlab.xsjcs.cn/xfe/scheduler-test.git",
+  "author": "sheailun <sheailun@kingsoft.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "axios": "^0.19.2"
+  }
+}
