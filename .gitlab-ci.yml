@@ -1,0 +1,5 @@
+job:on-schedule:
+  only:
+    - schedules
+  script:
+    - node src/index.js
