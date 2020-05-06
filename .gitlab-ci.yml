@@ -5,3 +5,8 @@ job:on-schedule:
     - npm install
   script:
     - npm start
+
+stages:
+  - build
+  - test
+  - deploy
