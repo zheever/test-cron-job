@@ -1,5 +1,7 @@
 job:on-schedule:
   only:
     - schedules
+  before_script:
+    - npm install
   script:
-    - npm install && npm start
+    - npm start
