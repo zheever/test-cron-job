@@ -2,7 +2,7 @@ job:on-schedule:
   only:
     - schedules
   before_script:
-    - yarn
+    - npm i
   script:
     - npm start
 
