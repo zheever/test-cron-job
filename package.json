@@ -13,5 +13,6 @@
   },
   "scripts": {
     "start": "node src/index.js"
-  }
+  },
+  "bin": "bin/index.js"
 }
