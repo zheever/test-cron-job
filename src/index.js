@@ -10,8 +10,6 @@ function notifyEnterpriseRobot(message) {
   })
 }
 
-notifyEnterpriseRobot(`[${new Date()}]: 测试`);
-
 const result = parser(
   `POST https://api.golink.com/wx/ajax-speed-card-receive HTTP/1.1
 Host: api.golink.com
