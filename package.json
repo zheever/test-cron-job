@@ -5,11 +5,9 @@
   "repository": "https://gitlab.xsjcs.cn/xfe/scheduler-test.git",
   "author": "sheailun <sheailun@kingsoft.com>",
   "license": "MIT",
-  "devDependencies": {
-    "axios": "^0.19.2"
-  },
   "dependencies": {
-    "@xfe-team/http-request-text-parser": "^0.0.1"
+    "@xfe-team/http-request-text-parser": "^0.0.1",
+    "axios": "^0.19.2"
   },
   "scripts": {
     "start": "node src/index.js"
