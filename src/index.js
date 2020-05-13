@@ -32,7 +32,7 @@ axios.post(
     headers: result.headers
   }
 ).then(response=> {
-  notifyEnterpriseRobot(JSON.stringify(response.data));
+  notifyEnterpriseRobot(new Date() + '\n' + JSON.stringify(response.data, null, 2));
 }).catch(error=> {
-  notifyEnterpriseRobot(JSON.stringify(error.message));
+  notifyEnterpriseRobot(new Date() + '\n' + JSON.stringify(error.message, null, 2));
 })
