@@ -33,7 +33,6 @@ module.exports = ({ shouldNotifyIfSuccess }) => {
       headers: result.headers
     }
   ).then(async response=> {
-    console.log(1111);
     if(shouldNotifyIfSuccess) {
       notifyEnterpriseRobot(new Date() + '\n' + JSON.stringify(response.data, null, 2));
       const cdKeys = await getCdKeys();
