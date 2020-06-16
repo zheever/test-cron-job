@@ -13,7 +13,7 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like
 Referer: http://api.golink.com/wx/user
 Accept-Encoding: gzip, deflate
 Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.5;q=0.4
-Cookie: advanced-frontend=bvsi5na9u3tvqcgafacjt9u0ed; __tins__20201607=%7B%22sid%22%3A%201591674617834%2C%20%22vd%22%3A%201%2C%20%22expires%22%3A%201591676417834%7D; __51cke__=; __51laig__=3`
+Cookie: advanced-frontend=4ub6lep3ufoclp0m5879asq669`
   );
   return axios[result.method.toLowerCase()](
     result.url,
