@@ -24,7 +24,7 @@ module.exports = ({ shouldNotifyIfSuccess }) => {
   Referer: https://api.golink.com/wx/once-card
   Accept-Encoding: gzip, deflate
   Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.5;q=0.4
-  Cookie: advanced-frontend=gmp66vl8uesmohdsgdvi6qkboa; __tins__20201607=%7B%22sid%22%3A%201589425290113%2C%20%22vd%22%3A%201%2C%20%22expires%22%3A%201589427090113%7D; __51cke__=; __51laig__=1`
+  Cookie: advanced-frontend=4ub6lep3ufoclp0m5879asq669`
   );
   axios.post(
     result.url,
