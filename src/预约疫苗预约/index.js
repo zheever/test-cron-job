@@ -1,8 +1,8 @@
 const axios = require('axios');
 const parser = require("@xfe-team/http-request-text-parser").default;
 
-function notify(desp) {
-  axios.get(`http://sc.ftqq.com/SCU124790Tb157c262e431021c91933bc92331e2945fa8ba9bd45a9.send?text=${encodeURIComponent(`14日疫苗预约${desp}`)}&desp=${encodeURIComponent(desp)}`)
+function notify(title, desp = '') {
+  axios.get(`http://sc.ftqq.com/SCU124790Tb157c262e431021c91933bc92331e2945fa8ba9bd45a9.send?text=${encodeURIComponent(`14日疫苗预约${title}`)}&desp=${encodeURIComponent(desp)}`)
 }
 
 module.exports = ({ shouldNotifyIfSuccess = true } = {}) => {
@@ -32,7 +32,8 @@ Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.5;q=0.4
   ).then(async response => {
     const { afternoonCount, morningCount } = response.data.body[0];
     if (shouldNotifyIfSuccess) {
-      notify(`[上午: ${morningCount} 下午: ${afternoonCount} ]`);
+      if (Number(afternoonCount) > 0 || Number(morningCount) > 0)
+        notify(`[上午: ${morningCount} 下午: ${afternoonCount} ]`, `${new Date()}\n 点击链接查阅: https://wx.weisheng.com/wechat/wx_hcn-v2.html#/doctor-select?orgid=5bc2837d-6ca6-4322-87cf-ec3054f4397d&deptid=9494`);
     }
   }).catch(error => {
     notify(new Date() + '\n' + JSON.stringify(error.message, null, 2));
