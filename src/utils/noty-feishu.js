@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require('../../node_modules/axios');
 
 /**
  * 飞书提醒
