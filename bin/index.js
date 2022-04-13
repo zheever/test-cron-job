@@ -1,9 +1,17 @@
 #!/usr/bin/env node
 const run = require('../src');
+const command = require('../src/command/index.js');
 const mins = new Date().getMinutes();
 const hours = new Date().getHours();
 
 (() => {
+  const args = process.argv.slice(2);
+  if (args.length === 2) {
+   const type = args[0];
+   const data = args[1];
+   command.handle(type, data);
+   return;
+  }
 //   if (process.env.NODE_ENV === 'test') {
 //     run({ shouldNotifyIfSuccess: true });
 //     require('../src/预约疫苗预约')();
