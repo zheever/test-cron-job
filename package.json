@@ -11,5 +11,10 @@
     "start": "node src/index.js",
     "test": "NODE_ENV=test node bin/index.js"
   },
+  "files": [
+    "bin",
+    "node_modules",
+    "src"
+  ],
   "bin": "bin/index.js"
 }
