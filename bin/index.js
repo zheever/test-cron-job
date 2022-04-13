@@ -3,6 +3,7 @@ const command = require('../src/command/index.js');
 
 (() => {
   const args = process.argv.slice(2);
+  console.log({args});
   if (args.length === 2) {
    const type = args[0];
    const data = args[1];
