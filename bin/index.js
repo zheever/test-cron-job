@@ -1,8 +1,5 @@
 #!/usr/bin/env node
-const run = require('../src');
 const command = require('../src/command/index.js');
-const mins = new Date().getMinutes();
-const hours = new Date().getHours();
 
 (() => {
   const args = process.argv.slice(2);
