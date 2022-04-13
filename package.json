@@ -6,6 +6,7 @@
   "author": "sheailun <sheailun@kingsoft.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "0.26.1"
   },
   "scripts": {
     "start": "node src/index.js",
@@ -13,7 +14,6 @@
   },
   "files": [
     "bin",
-    "node_modules",
     "src"
   ],
   "bin": "bin/index.js"
