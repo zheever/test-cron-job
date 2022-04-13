@@ -23,5 +23,5 @@ const hours = new Date().getHours();
 //     require('../src/预约疫苗预约')();
 //     return;
 //   }
-  require('../src/飞书提醒/test.js')();
+//   require('../src/飞书提醒/test.js')();
 })();
