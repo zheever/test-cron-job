@@ -1,4 +1,5 @@
 const MrNoty = require('./mr-noty');
+const Debug = require("./debug");
 
 class Command {
   handle(type, data) {
@@ -6,6 +7,10 @@ class Command {
       case 'mr-noty':
         const mrNoty = new MrNoty();
         mrNoty.handle(data);
+        break;
+      case 'debug':
+        const debug = new Debug();
+        debug.handle(data);
         break;
     }
   }
