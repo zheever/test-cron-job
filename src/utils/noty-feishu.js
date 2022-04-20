@@ -16,12 +16,18 @@ const axios = require('axios');
  * @param url
  * @param messageType
  * @param content
+ * @param formatter
  * @returns {*}
  */
-const notyFeishu = ({url, messageType, content}) => {
+const notyFeishu = ({
+                      url,
+                      messageType,
+                      content,
+                      contentFormatter
+                    }) => {
   return axios.post(
     url,
-    {"msg_type": messageType, "content": {text: JSON.stringify(content)}},
+    {"msg_type": messageType, "content": {text: contentFormatter ? contentFormatter(content) : content}},
     {
       headers: {
         "content-type": "application/json"
