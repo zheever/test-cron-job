@@ -1,4 +1,5 @@
 const notyFeishu = require('../utils/noty-feishu');
+const formatTime = require('../utils/format-time');
 
 class SentryNoty {
   getCardConfig = (content) => {
@@ -15,7 +16,7 @@ class SentryNoty {
             {
               "is_short": true,
               "text": {
-                "content": `**🕐 时间：**\n${timestamp ? new Date(timestamp*1000).toLocaleString() : ""}`,
+                "content": `**🕐 时间：**\n${timestamp ? formatTime(timestamp) : ""}`,
                 "tag": "lark_md"
               }
             },
