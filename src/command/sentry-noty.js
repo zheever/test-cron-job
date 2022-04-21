@@ -15,7 +15,7 @@ class SentryNoty {
             {
               "is_short": true,
               "text": {
-                "content": `**🕐 时间：**\n${timestamp ? new Date(timestamp) : ""}`,
+                "content": `**🕐 时间：**\n${timestamp ? new Date(timestamp).toLocaleString() : ""}`,
                 "tag": "lark_md"
               }
             },
