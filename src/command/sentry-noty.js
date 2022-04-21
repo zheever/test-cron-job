@@ -113,7 +113,7 @@ class SentryNoty {
     }
     return notyFeishu({
       url: data.url,
-      messageType: 'text',
+      messageType: 'interactive',
       card: this.getCardConfig(data.content),
     });
   };
