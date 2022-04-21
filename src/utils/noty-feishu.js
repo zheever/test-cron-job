@@ -23,11 +23,16 @@ const notyFeishu = ({
                       url,
                       messageType,
                       content,
-                      contentFormatter
+                      contentFormatter,
+                      card
                     }) => {
   return axios.post(
     url,
-    {"msg_type": messageType, "content": {text: contentFormatter ? contentFormatter(content) : content}},
+    {
+      "msg_type": messageType,
+      "content": content ? {text: contentFormatter ? contentFormatter(content) : content} : undefined,
+      "card": card
+    },
     {
       headers: {
         "content-type": "application/json"

@@ -1,50 +1,103 @@
 const notyFeishu = require('../utils/noty-feishu');
 
 class SentryNoty {
-  contentFormatter = (content) => {
-    const body = content.body || {};
-    const {
-      event,
-      ...rest
-    } = body;
-    const {
-      title,
-      event_id,
-      environment,
-      platform,
-      logger,
-      type,
-      metadata,
-      timestamp,
-      user,
-      sdk,
-      level,
-      contexts,
-      project,
-      release,
-      key_id
-    } = event || {};
-    return JSON.stringify({
-      type: 'Sentry 报错',
-      ...rest,
-      event: {
-        title,
-        event_id,
-        environment,
-        platform,
-        logger,
-        type,
-        metadata,
-        timestamp,
-        user,
-        sdk,
-        level,
-        contexts,
-        project,
-        release,
-        key_id,
+  getCardConfig = (content) => {
+    const {project, id, event, level, url} = content || {};
+    const {timestamp, title} = event || {};
+    return {
+      "config": {
+        "wide_screen_mode": true
       },
-    }, null, 4)
+      "elements": [
+        {
+          "fields": [
+            {
+              "is_short": true,
+              "text": {
+                "content": `**🕐 时间：**\n${timestamp ? new Date(timestamp) : ""}`,
+                "tag": "lark_md"
+              }
+            },
+            {
+              "is_short": true,
+              "text": {
+                "content": `**🔢 事件 ID：：**\n${id}`,
+                "tag": "lark_md"
+              }
+            },
+            {
+              "is_short": false,
+              "text": {
+                "content": "",
+                "tag": "lark_md"
+              }
+            },
+            {
+              "is_short": true,
+              "text": {
+                "content": `**📋 项目：**\n${project}`,
+                "tag": "lark_md"
+              }
+            },
+            {
+              "is_short": true,
+              "text": {
+                "content": `**👤 级别：**\n${level}`,
+                "tag": "lark_md"
+              }
+            },
+            {
+              "is_short": false,
+              "text": {
+                "content": "",
+                "tag": "lark_md"
+              }
+            },
+            {
+              "is_short": true,
+              "text": {
+                "content": `**报错信息：**\n${title}`,
+                "tag": "lark_md"
+              }
+            }
+          ],
+          "tag": "div"
+        },
+        {
+          "tag": "hr"
+        },
+        {
+          "tag": "div",
+          "text": {
+            "tag": "lark_md",
+            "content": "前往Sentry查看详情。"
+          },
+          "extra": {
+            "tag": "button",
+            "text": {
+              "tag": "lark_md",
+              "content": "查看详情"
+            },
+            "type": "primary",
+            "url": url
+          }
+        },
+        {
+          "tag": "div",
+          "text": {
+            "tag": "plain_text",
+            "content": ""
+          }
+        }
+      ],
+      "header": {
+        "template": "red",
+        "title": {
+          "content": "Sentry 报错提醒",
+          "tag": "plain_text"
+        }
+      }
+    }
   }
 
   handle(data) {
@@ -61,8 +114,7 @@ class SentryNoty {
     return notyFeishu({
       url: data.url,
       messageType: 'text',
-      content: data.content,
-      contentFormatter: this.contentFormatter
+      card: this.getCardConfig(data.content),
     });
   };
 }
