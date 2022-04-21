@@ -18,7 +18,6 @@ class SentryNoty {
       timestamp,
       user,
       sdk,
-      exception,
       level,
       contexts,
       project,
@@ -26,6 +25,8 @@ class SentryNoty {
       key_id
     } = event || {};
     return JSON.stringify({
+      type: 'Sentry 报错',
+      ...rest,
       event: {
         title,
         event_id,
@@ -37,15 +38,13 @@ class SentryNoty {
         timestamp,
         user,
         sdk,
-        exception,
         level,
         contexts,
         project,
         release,
         key_id,
       },
-      ...rest
-    }, null, 2)
+    }, null, 4)
   }
 
   handle(data) {
