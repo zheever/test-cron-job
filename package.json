@@ -1,8 +1,8 @@
 {
-  "name": "scheduler-test",
+  "name": "test-faas-proxy",
   "version": "1.0.1",
   "main": "src/index.js",
-  "repository": "https://gitlab.xsjcs.cn/xfe/scheduler-test.git",
+  "repository": "https://github.com/jf3096/test-cron-job.git",
   "author": "sheailun <sheailun@kingsoft.com>",
   "license": "MIT",
   "dependencies": {
