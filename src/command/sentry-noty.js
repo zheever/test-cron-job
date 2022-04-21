@@ -23,7 +23,7 @@ class SentryNoty {
             {
               "is_short": true,
               "text": {
-                "content": `**🔢 事件 ID：：**\n${id}`,
+                "content": `**📋 项目：**\n${project}`,
                 "tag": "lark_md"
               }
             },
@@ -37,7 +37,7 @@ class SentryNoty {
             {
               "is_short": true,
               "text": {
-                "content": `**📋 项目：**\n${project}`,
+                "content": `**🔢 事件 ID：：**\n${id}`,
                 "tag": "lark_md"
               }
             },
@@ -95,7 +95,7 @@ class SentryNoty {
       "header": {
         "template": "red",
         "title": {
-          "content": "Sentry 报错提醒",
+          "content": "Sentry 错误监控提醒",
           "tag": "plain_text"
         }
       }
