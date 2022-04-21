@@ -2,7 +2,8 @@ const notyFeishu = require('../utils/noty-feishu');
 
 class SentryNoty {
   getCardConfig = (content) => {
-    const {project, id, event, level, url} = content || {};
+    const body = content.body || {};
+    const {project, id, event, level, url} = body || {};
     const {timestamp, title} = event || {};
     return {
       "config": {
